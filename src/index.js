@@ -1,15 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import AttributeExercises from './AttributeExercises';
+// import AttributeExercises from './AttributeExercises';
+// import LikeBox from './KomponentExercises';
+import Menu from './KomponentExercises';
 // import App from './App';
 
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
+    {/* <KomponentExercises name="Jan" surname={'Kowalski'}/> */}
+    {/* <KomponentExercises numbers={[1,2,3]}/> */}
+    {/* <LikeBox likes={3}/> */}
+    <Menu/>
+
     {/* <div>Jsx a JS</div> */}
-    <AttributeExercises/>
+    {/* <AttributeExercises/> */}
     {/* <App /> */}
   </React.StrictMode>,
   document.getElementById('root')
