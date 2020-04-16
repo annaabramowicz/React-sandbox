@@ -1,20 +1,20 @@
 import React from 'react';
 import './App.css'; 
 
-// function KomponentExercises({name, surname}) {
-//     return <h1>Hello, {name} {surname}</h1>
-// }
+function Hello({name, surname}) {
+    return <h1>Hello, {name} {surname}</h1>
+}
 
-// class KomponentExercises extends React.Component{
-//     render(){
-//         return <h1>{this.props.numbers.reduce(function (prev, curr) {
-//             return prev + curr; 
-//         })}</h1>
-//     }
-// }
+class Sum extends React.Component{
+    render(){
+        return <h1>{this.props.numbers.reduce(function (prev, curr) {
+            return prev + curr; 
+        })}</h1>
+    }
+}
 
 //destrukturyzacja {}
-// function KomponentExercises({numbers}) {
+// function Sum({numbers}) {
 //     return  <h1>{numbers.reduce(function (prev, curr) {
 //         return prev + curr; 
 //     })}</h1>
@@ -26,13 +26,12 @@ import './App.css';
 //     </h1>
 // );
 
-// function LikeBox(props) {
-//     return <div>
-//         <p>Ilosc polubien: {props.likes}</p>
-//         <button>Like</button>
-//     </div>
-    
-// }
+function LikeBox(props) {
+    return <div>
+        <p>Ilosc polubien: {props.likes}</p>
+        <button>Like</button>
+    </div>
+}
 
 function Menu() {
     return <div>
@@ -43,7 +42,14 @@ function Menu() {
             <li><a href='/contact'>Kontakt</a></li>
         </ul>
     </div>
-    
 }
-// export default LikeBox;
-export default Menu;
+
+function KomponentExercises() {
+    return <div>
+        <Hello/>
+        {/* <Sum/> */}
+        <LikeBox/>
+        <Menu/>
+    </div>
+}
+export default KomponentExercises;
