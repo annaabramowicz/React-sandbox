@@ -19,7 +19,7 @@ const menu = [
 const ShopList = (menu) => {
     return (
         <div className="shoplist">
-            {{menu.map(curr => <ShopItemHeader key={curr.title} title={curr.title} image={curr.image}/>)}}
+            {menu.map(curr => <ShopItemHeader key={curr.title} title={curr.title} image={curr.image}/>)}
         </div>
     )
 }
