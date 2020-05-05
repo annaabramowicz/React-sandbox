@@ -3,11 +3,15 @@ import './App.css';
 
 import animals from './animals';  
 
-const a = Number(prompt( 'Podaj liczbe a'));
-const b = Number(prompt( 'Podaj liczbe b'));
-const char = prompt('Podaj znak +,-,/,*');
+// const a = Number(prompt( 'Podaj liczbe a'));
+// const b = Number(prompt( 'Podaj liczbe b'));
+// const char = prompt('Podaj znak +,-,/,*');
+// const age = Number(prompt('Podaj rok urodzenia'));
+const a = 4;
+const b = 5;
+const char = '+';
+const age = 23;
 const result = a + b;
-const age = Number(prompt('Podaj rok urodzenia'));
 const actuallYear = (new Date()).getFullYear();
 
 function cacl(char,a,b){
@@ -23,8 +27,8 @@ function cacl(char,a,b){
 function App() {
   return (
     <div className="App">
+      test
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <h1>Test</h1>
         <div>{result}</div>
         <h1>Aktualny wiek: {actuallYear - age}</h1>
