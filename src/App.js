@@ -2,6 +2,11 @@ import React, { Fragment } from 'react';
 import './App.css';
 
 const DAY = "firday";
+const people = [{firstName: "Krzysiek"}, {firstName: "Tomek"}];
+
+// people.map((element, index) => {
+//   console.log(element, index);
+// })
 
 function Hello({firstName, lastName, children}) {
   return(
@@ -27,8 +32,9 @@ function isMonday(DAY){
     return (
       <Fragment>
         test
-            <h1>Test</h1>
-            <Hello firstName="Krzysiek" />
+          {people.map((element,index) => {
+           return <Hello key={index} firstName={element.firstName}/>
+          })}
             <Hello>Tresc dziecka</Hello>
             <Hello/>
       </Fragment>
@@ -40,19 +46,6 @@ function App() {
   return (
     <div className="App">
     {isMonday(DAY)}
-      {/* operator trójargumentowy, traci na czytelności i trzeba opakowywac w kolejnego diva */}
-      {/* {DAY === "monday"?
-        <div>
-          <Hello firstName="Krzysiek" lastName="Nowak"/>
-        </div> :
-        <div>
-          test
-          <h1>Test</h1>
-          <Hello firstName="Krzysiek" />
-          <Hello>Tresc dziecka</Hello>
-          <Hello/>
-        </div>
-      } */}
     </div>
   );
 }
