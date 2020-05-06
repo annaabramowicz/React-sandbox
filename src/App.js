@@ -1,6 +1,7 @@
-import React, { Children } from 'react';
+import React, { Fragment } from 'react';
 import './App.css';
 
+const DAY = "firday";
 
 function Hello({firstName, lastName, children}) {
   return(
@@ -15,16 +16,43 @@ Hello.defaultProps = {
   firstName: "Szkola",
   // lastName : "Reacta"
 }
+// łatwiej sie testuje
+function isMonday(DAY){
+  if(DAY === "monday"){
+    return (
+      <Hello firstName="Krzysiek" lastName="Nowak"/>
+    )
+  } else {
+    // jak jest zwracanych wicej niz jeden argument musi byc "opakowanie"
+    return (
+      <Fragment>
+        test
+            <h1>Test</h1>
+            <Hello firstName="Krzysiek" />
+            <Hello>Tresc dziecka</Hello>
+            <Hello/>
+      </Fragment>
+    )
+  }
+}
 
 function App() {
   return (
     <div className="App">
-      test
-        <h1>Test</h1>
-        <Hello firstName="Krzysiek" lastName="Nowak"/>
-        <Hello firstName="Krzysiek" />
-        <Hello>Tresc dziecka</Hello>
-        <Hello/>
+    {isMonday(DAY)}
+      {/* operator trójargumentowy, traci na czytelności i trzeba opakowywac w kolejnego diva */}
+      {/* {DAY === "monday"?
+        <div>
+          <Hello firstName="Krzysiek" lastName="Nowak"/>
+        </div> :
+        <div>
+          test
+          <h1>Test</h1>
+          <Hello firstName="Krzysiek" />
+          <Hello>Tresc dziecka</Hello>
+          <Hello/>
+        </div>
+      } */}
     </div>
   );
 }
